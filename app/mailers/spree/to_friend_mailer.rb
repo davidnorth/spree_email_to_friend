@@ -6,8 +6,8 @@ class Spree::ToFriendMailer < ActionMailer::Base
     @mail = mail
     opts = {}
 
-    if mail.hide_recipients && Spree::Config[:hidden_recipients_to_address]
-      opts[:to] = Spree::Config[:hidden_recipients_to_address]
+    if mail.hide_recipients && SpreeEmailToFriend::Config[:hidden_recipients_to_address]
+      opts[:to] = SpreeEmailToFriend::Config[:hidden_recipients_to_address]
       opts[:bcc] = mail.recipient_email
     else
       opts[:to] = mail.recipient_email
