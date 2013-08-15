@@ -36,5 +36,3 @@ Spree::Zone.class_eval do
     find_by_name("GlobalZone") || Factory(:global_zone)
   end
 end
-
-@configuration ||= Spree::AppConfiguration.find_or_create_by_name("Default configuration")
